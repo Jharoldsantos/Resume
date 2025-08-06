@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Resume Layout - John Harold Santos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .leftside {
+      width: 25%;
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+    }
+
+    .leftside .imgbg {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .leftside img {
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid #ecf0f1;
+    }
+
+    .leftside h1 {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .leftside h1 span {
+      display: block;
+      font-size: 14px;
+      color: #bdc3c7;
+    }
+
+    .leftside h3 {
+      margin-top: 20px;
+      font-size: 16px;
+      border-bottom: 1px solid #7f8c8d;
+      padding-bottom: 5px;
+    }
+
+    .leftside ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .leftside ul li {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .right_side1 {
+      width: 75%;
+      padding: 30px;
+      background: #fff;
+    }
+
+    .right_side1 section {
+      margin-bottom: 30px;
+    }
+
+    .right_side1 h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .right_side1 p,
+    .right_side1 li {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills li {
+      margin-bottom: 10px;
+    }
+
+    .bar {
+      display: block;
+      height: 8px;
+      background: #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+
+    .fill {
+      display: block;
+      height: 100%;
+      background: #3498db;
+      border-radius: 5px;
+    }
+
+   .comment-section {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.comment-box textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  transition: border 0.2s ease;
+}
+
+.comment-box textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.comment-box .button-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.comment-box .button-group button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-box .button-group button:hover {
+  background-color: #2980b9;
+}
+
+.comment-output {
+  margin-top: 20px;
+}
+
+.comment-output p {
+  background-color: #ecf0f1;
+  border-left: 4px solid #3498db;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    .button-group {
+      margin-top: 10px;
+    }
+
+    .button-group button,
+    .button-group a button {
+      padding: 10px 15px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .button-group button:hover {
+      background: #2980b9;
+    }
+
+    #output {
+      margin-top: 15px;
+    }
+
+    #output p {
+      background: #ecf0f1;
+      padding: 10px;
+      border-left: 4px solid #3498db;
+      margin-bottom: 8px;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .leftside, .right_side1 {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <div class="leftside">
+      <div class="profile">
+        <div class="imgbg">
+          <img src="img.png" alt="Profile Image">
+        </div>
+        <h1>John Harold Santos<br><span>IT Student</span></h1>
+      </div>
+
+      <div class="contactInfo">
+        <h3>Contact Info:</h3>
+        <ul>
+          <li>09701797157</li>
+          <li>johnharold24@gmail.com</li>
+          <li>Sta. Lucia Capas, Tarlac</li>
+          <li>fb: John Harold Santos</li>
+        </ul>
+      </div>
+
+      <div class="Hobbies">
+        <h3>Hobbies</h3>
+        <ul>
+          <li>Basketball</li>
+          <li>Playing Online Games</li>
+          <li>Watching Movies</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="right_side1">
+   
+      <section>
+        <h2>About Me</h2>
+        <p>I'm John Harold Santos, 20 years old. I love playing basketball and my goal someday is to become a successful Basketball Player. I am a 3rd-year student at Dominican College of Tarlac taking up Bachelor of Science in Information Technology.</p>
+      </section>
+
+      <hr>
+
+   
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Elementary:</strong> Sta. Lucia Elementary School (2012 - 2016)</li>
+          <li><strong>High School:</strong> Sta. Lucia National High School (2016 - 2020)</li>
+          <li><strong>Senior High School:</strong> Sta. Lucia National High School (2020 - 2023)</li>
+          <li><strong>College:</strong> Dominican College Of Tarlac (2023 - Present)</li>
+        </ul>
+      </section>
+
+      <hr>
+
+      
+      <section>
+        <h2>Skills</h2>
+        <div class="skills">
+          <ul>
+            <li><b>HTML</b><span class="bar"><span class="fill html"></span></span></li>
+            <li><b>CSS</b><span class="bar"><span class="fill css"></span></span></li>
+            <li><b>Java</b><span class="bar"><span class="fill java"></span></span></li>
+            <li><b>JavaScript</b><span class="bar"><span class="fill js"></span></span></li>
+          </ul>
+        </div>
+      </section>
+      <hr>
+      <secion>
+        <h2>Projects or Experience</h2>
+        <p>On my Academic Journey we worked on a project for our Systems Analysis and Design (SAD) subject called "Web-Based Apartment Unit and Rental Management System." It was designed to help apartment owners and tenants manage rental units, tenant records, and payments through a user-friendly online platform. We successfully defended this project during our SAD Defense and developed it using tools like HTML, CSS, JavaScript, PHP, and MySQL.</p>
+      </section>
+      <hr>
+      <section>
+        <h2>Comment Section</h2>
+        <textarea id="comment" placeholder="Write your comment here..."></textarea>
+        <div class="button-group">
+          <button onclick="addComment()">Submit</button>
+          <a href="resume.pdf" download><button>Download Resume</button></a>
+        </div>
+        <div id="output"></div>
+      </section>
+    </div>
+  </div>
+  <script>
+    function addComment() {
+      var comment = document.getElementById("comment").value;
+      if (comment.trim() !== "") {
+        var output = document.getElementById("output");
+        var newComment = document.createElement("p");
+        newComment.textContent = comment;
+        output.appendChild(newComment);
+        document.getElementById("comment").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
